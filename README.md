@@ -1,5 +1,7 @@
 # File Sculpt
 
+![example workflow](https://github.com/github/docs/actions/workflows/python-publish.yml/badge.svg)
+
 ##### current version: v0.0.4
 
 This python module abstracts finding and replacing certain portions of a file through regular expressions. It is a class that creates abstraction of the inner workings of opening and closing a file when finding and replacing its contents.
