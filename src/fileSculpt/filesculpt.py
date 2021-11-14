@@ -1,24 +1,35 @@
 import re
-
+import os
 
 class Sculptfile:
-    def __init__(self, findregex: re, replace: str, inpath: str, outpath: str):
+    def __init__(self, findregex: re, replace: str, inpath: str, outpath=None):
         self.findregex = findregex
         self.replace = replace
         try:
             self.inpath = inpath
-            try:
-                self.outpath = outpath
-            except:
+            if outpath == None:
                 self.outpath = inpath
+            else:
+                try:
+                    self.outpath = outpath
+                except:
+                    print("!!!! ------- Invalid Output path was specified ------- !!!!")
         except:
-            print("!!!! ------- No input path was specified ------- !!!!")
+            print("!!!! ------- No Input path was specified ------- !!!!")
 
     def __str__(self):
         return f"{self.findregex} {self.replace} {self.inpath} {self.outpath}"
 
+    def cleanpath(self,path):
+        return path[1:] if path[0]=='/' else path
+
     def scuttle(self):
         output_set = None
+
+        self.inpath=self.cleanpath(self.inpath)
+
+        if self.inpath.count("/") < 1:
+            self.inpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),self.inpath)
 
         with open(self.inpath, "r") as file:
             content = file.read()
@@ -37,6 +48,12 @@ class Sculptfile:
                     output_string += entry[item]
                 else:
                     output_string += item
+        
+        self.outpath=self.cleanpath(self.outpath)
+
+        if self.outpath.count("/") < 1:
+            self.outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),self.outpath)
 
         with open(self.outpath, "w") as file:
             file.write(output_string)
+

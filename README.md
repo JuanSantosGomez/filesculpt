@@ -1,5 +1,5 @@
 File Sculpt
-v. 0.0.2
+v. 0.0.3
 
 This python module abstracts finding and replacing certain portions of a file through regular expressions. It is a class that creates abstraction of the inner workings of opening and closing a file when finding and replacing its contents.
 
@@ -29,9 +29,31 @@ scuttle() - opens the file specified by inpath as read and returns the regular e
 
 sculpt() = executes the scuttle method and then executes the replacement specified by replacewith. Writes the result to the file specified in outpath
 
+USAGE:
+
+Define an object of class Sculptfile given the parameters above. Execute sculpt() method on the object.
+
+EXAMPLE:
+
+    Given a file foo.txt containing the text 'A quick brown fox jumps under the lazy dog.', we want the text to become "The quick brown fox jumps over the lazy dog"and save it to another file, foorect.txt.
+
+    ```python
+
+        from fileSculpt.filesculpt import Sculptfile
+
+        a = Sculptfile(r'^(A).+',["The",0],'foo.txt','foorect.text')
+        a.sculpt()
+
+    ```
+
 PATCHES:
 
 v. 0.0.2 :
 
     - changed path keyword arguments into positional arguments.
     - fixed bug of grouping when only one group is specified in the regex by adding a default grouping at the end of the inputted regex
+
+v. 0.0.3 :
+
+    - fixed optional argument output path.
+    - now allows paths to refer to files in the same directory without specifying the whole path
