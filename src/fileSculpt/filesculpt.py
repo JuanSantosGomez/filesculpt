@@ -1,16 +1,16 @@
 import re
 
 
-class Sculptfile():
-    def __init__(self, findregex: re, replace: str, **kwargs: str):
+class Sculptfile:
+    def __init__(self, findregex: re, replace: str, inpath: str, outpath: str):
         self.findregex = findregex
         self.replace = replace
         try:
-            self.inpath = kwargs['input_path']
+            self.inpath = inpath
             try:
-                self.outpath = kwargs['output_path']
+                self.outpath = outpath
             except:
-                self.outpath = kwargs['input_path']
+                self.outpath = inpath
         except:
             print("!!!! ------- No input path was specified ------- !!!!")
 
@@ -20,17 +20,17 @@ class Sculptfile():
     def scuttle(self):
         output_set = None
 
-        with open(self.inpath, 'r') as file:
+        with open(self.inpath, "r") as file:
             content = file.read()
 
-            regexset = re.compile(self.findregex)
+            regexset = re.compile(self.findregex + r"()")
             output_set = re.findall(regexset, content)
 
         return output_set
 
     def sculpt(self):
         scuttled = self.scuttle()
-        output_string = ''
+        output_string = ""
         for entry in scuttled:
             for item in self.replace:
                 if type(item) is int:
@@ -38,5 +38,5 @@ class Sculptfile():
                 else:
                     output_string += item
 
-        with open(self.outpath, 'w') as file:
+        with open(self.outpath, "w") as file:
             file.write(output_string)

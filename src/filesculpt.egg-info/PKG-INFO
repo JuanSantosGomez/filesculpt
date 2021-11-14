@@ -1,11 +1,27 @@
+Metadata-Version: 2.1
+Name: filesculpt
+Version: 0.0.1
+Summary: Abstraction of Regex find and replace on a file
+Home-page: https://github.com/JuanSantosGomez/filesculpt.git
+Author: Jonathan Roel Godinez
+Author-email: juansantosgomez@protonmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 File Sculpt
-v. 0.0.2
+v. 0.0.1
 
 This python module abstracts finding and replacing certain portions of a file through regular expressions. It is a class that creates abstraction of the inner workings of opening and closing a file when finding and replacing its contents.
 
 CLASS DEFINITION:
 
-Sculptfile( <positional arg> tofind : re , <positional arg> replacewith : list, <positional arg> inpath : str, <optional positional arg> outpath : str)
+Sculptfile( <positional arg> tofind : re , <positional arg> replacewith : list, <keyword arg> inpath : str, <optional keyword arg> outpath : str)
 
 CLASS ARGUMENTS:
 
@@ -29,9 +45,4 @@ scuttle() - opens the file specified by inpath as read and returns the regular e
 
 sculpt() = executes the scuttle method and then executes the replacement specified by replacewith. Writes the result to the file specified in outpath
 
-PATCHES:
 
-v. 0.0.2 :
-
-    - changed path keyword arguments into positional arguments.
-    - fixed bug of grouping when only one group is specified in the regex by adding a default grouping at the end of the inputted regex
