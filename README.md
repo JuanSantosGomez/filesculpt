@@ -1,5 +1,5 @@
 File Sculpt
-v. 0.0.3
+v. 0.0.4
 
 This python module abstracts finding and replacing certain portions of a file through regular expressions. It is a class that creates abstraction of the inner workings of opening and closing a file when finding and replacing its contents.
 
@@ -57,3 +57,7 @@ v. 0.0.3 :
 
     - fixed optional argument output path.
     - now allows paths to refer to files in the same directory without specifying the whole path
+
+v. 0.0.4 :
+
+    - github release
