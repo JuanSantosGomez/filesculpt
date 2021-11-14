@@ -1,6 +1,6 @@
 # File Sculpt
 
-![example workflow](https://github.com/github/docs/actions/workflows/python-publish.yml/badge.svg)
+![example workflow](https://github.com/juansantosgomez/filesculpt/actions/workflows/python-publish.yml/badge.svg)
 
 ##### current version: v0.0.4
 
