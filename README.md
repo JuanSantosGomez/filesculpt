@@ -27,7 +27,7 @@ from fileSculpt.filesculpt import Sculptfile
 
 ##### EXAMPLE:
 
-Given a file foo.txt containing the text 'A quick brown fox jumps under the lazy dog.', we want the text to become "The quick brown fox jumps over the lazy dog"and save it to another file, foorect.txt.
+Given a file `foo.txt` containing the text "A quick brown fox jumps under the lazy dog.", we want the text to become "_The_ quick brown fox jumps over the _lazy_ dog"and save it to another file, `foorect.txt`.
 
 ```
 from fileSculpt.filesculpt import Sculptfile
