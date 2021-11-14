@@ -1,8 +1,9 @@
 # File Sculpt
 
 ![example workflow](https://github.com/juansantosgomez/filesculpt/actions/workflows/python-publish.yml/badge.svg)
+![example workflow](https://github.com/juansantosgomez/filesculpt/actions/workflows/test-python-publish.yml/badge.svg)
 
-##### current version: v0.0.4
+##### current version: v0.0.5
 
 This python module abstracts finding and replacing certain portions of a file through regular expressions. It is a class that creates abstraction of the inner workings of opening and closing a file when finding and replacing its contents.
 
@@ -29,12 +30,12 @@ from fileSculpt.filesculpt import Sculptfile
 
 ##### EXAMPLE:
 
-Given a file `foo.txt` containing the text "A quick brown fox jumps under the lazy dog.", we want the text to become "_The_ quick brown fox jumps over the _lazy_ dog"and save it to another file, `foorect.txt`.
+Given a file `foo.txt` containing the text "A quick brown fox jumps under the lazy dog.", we want the text to become "_The_ quick brown fox jumps _over_ the lazy dog"and save it to another file, `foorect.txt`.
 
 ```
 from fileSculpt.filesculpt import Sculptfile
 
-a = Sculptfile(r'^(A).+',["The",0],'foo.txt','foorect.text')
+a = Sculptfile(r'^A(.+)under(.+)',["The",0,"over",1],'foo.txt','foorect.text')
 a.sculpt()
 ```
 
