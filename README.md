@@ -57,11 +57,3 @@ v. 0.0.3 :
 
     - fixed optional argument output path.
     - now allows paths to refer to files in the same directory without specifying the whole path
-
-v. 0.0.4 :
-
-    - github release
-
-v. 0.0.5 :
-
-    - pipeline release
