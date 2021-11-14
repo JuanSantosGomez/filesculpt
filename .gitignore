@@ -1,4 +1,2 @@
 /dist/
 *.pypirc
-/pyproject.toml
-/setup.cfg
