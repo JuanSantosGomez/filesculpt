@@ -61,3 +61,7 @@ v. 0.0.3 :
 v. 0.0.4 :
 
     - github release
+
+v. 0.0.5 :
+
+    - pipeline release
