@@ -31,7 +31,7 @@ class Sculptfile:
         if self.inpath.count("/") < 1:
             self.inpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),self.inpath)
 
-        with open(self.inpath, "r") as file:
+        with open(self.inpath, "r", encoding="UTF-8") as file:
             content = file.read()
 
             regexset = re.compile(self.findregex + r"()")
@@ -54,6 +54,6 @@ class Sculptfile:
         if self.outpath.count("/") < 1:
             self.outpath = os.path.join(os.path.dirname(os.path.abspath(__file__)),self.outpath)
 
-        with open(self.outpath, "w") as file:
+        with open(self.outpath, "w", encoding="UTF-8") as file:
             file.write(output_string)
 
